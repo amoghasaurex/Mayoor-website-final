@@ -1,27 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.gradient { 
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg width=%222000%22 height=%221400%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient id=%22a%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23cdcbff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23d9d8ff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23c5c5ff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23d3d3ff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22c%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23bcbfff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23cccfff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22d%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23b4b9ff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23c6caff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22e%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23c1c4ff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23d0d2ff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22f%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23cfd0ff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23dbdbff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22g%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23dcdbff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23e4e4ff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22h%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23e9e6ff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23eeecff%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath fill=%22%23d5d1ff%22 d=%22M0 0h2000v1400H0z%22%2F%3E%3Cpath d=%22M0 155c108.663-8.636 217.326-17.272 325-16 107.674 1.272 214.357 12.453 329 12 114.643-.453 237.244-12.541 355-6s230.667 31.712 338 31c107.333-.712 209.09-27.307 335-36 125.91-8.693 275.974.516 333 6 57.026 5.484 21.013 7.242 25 9l-40 1245H0Z%22 fill=%22url(%23a)%22%2F%3E%3Cpath d=%22M0 311c102.468-1.476 204.936-2.953 319-5s239.723-4.665 351 3c111.277 7.665 208.17 25.612 322 24 113.83-1.612 244.593-22.783 355-28 110.407-5.217 200.456 5.518 317 14 116.544 8.482 259.584 14.709 320 13 60.416-1.709 38.208-11.355 56-21l-40 1089H0Z%22 fill=%22url(%23b)%22%2F%3E%3Cpath d=%22M0 466c106.438-6.383 212.876-12.765 321-13 108.124-.235 217.935 5.679 333 14s235.385 19.05 354 18c118.615-1.05 235.526-13.88 337-19 101.474-5.12 187.512-2.532 305 2s266.425 11.01 330 11c63.575-.01 41.787-6.505 60-13l-40 934H0Z%22 fill=%22url(%23c)%22%2F%3E%3Cpath d=%22M0 622c100.795 11.804 201.59 23.607 320 22 118.41-1.607 254.434-16.625 369-24s207.674-7.109 317-7c109.326.109 234.87.06 340-4s189.842-12.132 314-10c124.158 2.132 287.76 14.466 351 20 63.24 5.534 26.12 4.267 29 3l-40 778H0Z%22 fill=%22url(%23d)%22%2F%3E%3Cpath d=%22M0 777c115.085 4.864 230.17 9.729 344 7 113.83-2.729 226.404-13.05 329-10 102.596 3.05 195.212 19.472 311 21 115.788 1.528 254.747-11.838 365-21 110.253-9.162 191.799-14.12 314-13 122.201 1.12 285.057 8.32 348 12 62.943 3.68 25.971 3.84 29 4l-40 623H0Z%22 fill=%22url(%23e)%22%2F%3E%3Cpath d=%22M0 933c95.827-3.271 191.654-6.542 309-4s256.21 10.897 381 16c124.79 5.103 235.504 6.953 333 0 97.496-6.953 181.772-22.709 292-28 110.228-5.291 246.408-.117 373 4 126.592 4.117 243.598 7.176 294 9 50.402 1.824 34.201 2.412 58 3l-40 467H0Z%22 fill=%22url(%23f)%22%2F%3E%3Cpath d=%22M0 1088c117.681 12.726 235.363 25.451 342 19 106.637-6.451 202.23-32.079 310-35 107.77-2.921 227.717 16.864 343 25 115.283 8.136 225.9 4.624 329 2 103.1-2.624 198.68-4.36 332-6 133.32-1.64 304.377-3.183 368-4 63.623-.817 19.812-.909 16-1l-40 312H0Z%22 fill=%22url(%23g)%22%2F%3E%3Cpath d=%22M0 1244c105.86.596 211.719 1.193 322 1 110.281-.193 224.984-1.175 340-6 115.016-4.825 230.344-13.495 336-13 105.656.495 201.64 10.153 313 10 111.36-.153 238.097-10.118 367-10 128.903.118 259.972 10.32 314 15 54.028 4.68 31.014 3.84 48 3l-40 156H0Z%22 fill=%22url(%23h)%22%2F%3E%3C%2Fsvg%3E");
 }
